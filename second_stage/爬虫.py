@@ -15,8 +15,8 @@ if __name__ == '__main__':
     # print(list01[len(list01)-1])
 
     def get_content(head_html,list_):
-        tmp = []
-        i  = 0
+        # tmp = []
+        # i  = 0
         while list_:
             url = head_html + list_[0][0]
             print(url)
@@ -28,10 +28,12 @@ if __name__ == '__main__':
             content = str(ress.group(1))
             content = content.replace("&nbsp;&nbsp;&nbsp;&nbsp;", "\t")
             content = content.replace("<br><br>", "\n")
-
-            # with open("三寸人间.txt", "a", encoding="utf-8") as fw:
-            #     fw.write("\t\t\t\t" + list_[0][1] + "\n")
-            #     fw.write(content)
+            threadLock = threading.Lock()
+            with open("三寸人间.txt", "a", encoding="utf-8") as fw:
+                threadLock.acquire()
+                fw.write("\t\t\t\t" + list_[0][1] + "\n")
+                fw.write(content)
+                threadLock.release()
 
 
             list_ = list_[1:]
