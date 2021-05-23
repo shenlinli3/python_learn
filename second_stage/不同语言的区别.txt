@@ -1,0 +1,27 @@
+#编程语言分类
+	#编译类 c c++
+		# 运行速度快
+		# 不可跨平台
+		# 运行较快
+	#解释型 Python
+		# 一行编译
+		# 运行速度相对较慢
+	# 半编译半解释 java
+	# java.class
+	
+print("hello world!") #python
+
+public class Test { #java
+
+	public static void main(String[] args)
+	{
+		System.out.println("hello world!");
+	}
+	
+}
+
+int main()
+{
+	print("asd");
+	return 0;
+}
